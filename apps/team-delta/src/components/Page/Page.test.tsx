@@ -6,12 +6,12 @@ import Page, { getStatusMessage, validateEmail } from './Page';
 
 // Mock fetch for form submission tests
 const mockFetch = vi.fn();
-global.fetch = mockFetch;
 
 describe('Page component', () => {
   beforeEach(() => {
     mockFetch.mockReset();
     mockFetch.mockResolvedValue({ ok: true });
+    vi.stubGlobal('fetch', mockFetch);
   });
 
   it('renders without crashing', () => {
