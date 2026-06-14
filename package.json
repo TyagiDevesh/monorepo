@@ -1,0 +1,23 @@
+{
+  "name": "quality-automation-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "test:team-delta": "npm run test --workspace=apps/team-delta",
+    "test:team-amaze": "npm run test --workspace=apps/team-amaze",
+    "build": "npm run build --workspaces --if-present",
+    "build:team-delta": "npm run build --workspace=apps/team-delta",
+    "build:team-amaze": "npm run build --workspace=apps/team-amaze",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
+  }
+}
